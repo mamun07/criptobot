@@ -2,8 +2,9 @@ import React from 'react';
 import millify from 'millify';
 import { Card, Col, Row, Typography } from 'antd';
 import { useGetCryptosQuery } from '../services/cryptoApi';
+import { NavLink } from 'react-router-dom';
 
-const { Title } = Typography;
+import { Criptocurrencies, News } from './index';
 
 const Homepage = () => {
   const { data, isFetching } = useGetCryptosQuery();
@@ -16,12 +17,8 @@ const Homepage = () => {
     <>
       <Row gutter={[32, 32]}>
         <Col span={24}>
-          <Typography>
-            <Title>Welcome to Crypto Bot</Title>
-          </Typography>
+          <Typography.Title> Welcome to Crypto Bot</Typography.Title>
         </Col>
-      </Row>
-      <Row gutter={[32, 32]}>
         <Col xs={24} md={5}>
           <Card title="Total Cryptocurrencies">
             <Typography.Title>{globalStats.total}</Typography.Title>
@@ -53,6 +50,24 @@ const Homepage = () => {
             <Typography.Title>
               {millify(globalStats.total24hVolume)}
             </Typography.Title>
+          </Card>
+        </Col>
+
+        <Col span={24}>
+          <Card
+            title="Top 10 Cryptocurrencies"
+            extra={<NavLink to="/">Show More</NavLink>}
+          >
+            <Criptocurrencies smplified />
+          </Card>
+        </Col>
+
+        <Col span={24}>
+          <Card
+            title="Latest Cryptocurrencies News"
+            extra={<NavLink to="/">Show More</NavLink>}
+          >
+            <News smplified />
           </Card>
         </Col>
       </Row>
