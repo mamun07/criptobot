@@ -1,38 +1,44 @@
-.App {
-  text-align: center;
+@import '~antd/dist/antd.css';
+
+:root {
+  --text-primary: #2d2d2d;
+  --bgPrimary: #fff;
+  --bgSecondary: #e2e2e2;
+  --orange: #ff8800;
+  --border: #c7c7c7;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a {
+  color: var(--text-primary);
+}
+a:hover {
+  color: var(--orange);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.menu-left-icon .trigger-icon {
+  padding: 0 24px;
+  font-size: 18px;
+  line-height: 64px;
+  cursor: pointer;
+  transition: color 0.3s;
+  color: var(--bgPrimary);
 }
 
-.App-link {
-  color: #61dafb;
+.logo {
+  height: 32px;
+  margin: 16px;
+  color: var(--bgPrimary);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.site-layout .site-layout-content {
+  background: var(--bgPrimary);
+}
+.site-layout .site-layout-header {
+  padding: 0;
 }
