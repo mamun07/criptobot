@@ -4,7 +4,7 @@ import { HomeOutlined } from '@ant-design/icons';
 import { NavLink } from 'react-router-dom';
 const Navbar = () => {
   return (
-    <>
+    <div>
       <div className="logo">Cripto Bot</div>
       <Menu
         theme="dark"
@@ -19,21 +19,21 @@ const Navbar = () => {
           {
             key: '2',
             icon: <HomeOutlined />,
-            label: <NavLink to="/">About</NavLink>,
+            label: <NavLink to="/exchnages">Exchnages</NavLink>,
           },
           {
             key: '3',
             icon: <HomeOutlined />,
-            label: <NavLink to="/">Contact Us</NavLink>,
+            label: <NavLink to="/criptocurrencies">Cripto Currencies</NavLink>,
           },
           {
             key: '4',
             icon: <HomeOutlined />,
-            label: <NavLink to="/">Helps</NavLink>,
+            label: <NavLink to="/news">News</NavLink>,
           },
         ]}
       />
-    </>
+    </div>
   );
 };
 

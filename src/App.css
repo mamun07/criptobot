@@ -21,6 +21,10 @@ a:hover {
   color: var(--orange);
 }
 
+.sidebar-nav {
+  height: 100vh;
+}
+
 .menu-left-icon .trigger-icon {
   padding: 0 24px;
   font-size: 18px;
