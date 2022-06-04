@@ -3,19 +3,19 @@ import { Layout } from 'antd';
 import { Route, Routes } from 'react-router-dom';
 
 import { Navbar } from './components';
-import { HeaderMenu } from './container';
+import { HeaderMenu, FooterMenu } from './container';
 import {
   Homepage,
-  Exchnages,
+  Exchanges,
   Criptocurrencies,
   CriptoDetails,
   News,
   NotFound,
 } from './pages';
-const { Sider, Content, Header } = Layout;
+const { Sider, Content, Header, Footer } = Layout;
 
 const App = () => {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   return (
     <Layout>
       <Sider
@@ -27,20 +27,23 @@ const App = () => {
       >
         <Navbar />
       </Sider>
-      <Layout className="site-layout">
-        <Header className="site-layout-header">
+      <Layout className="main-content">
+        <Header className="entry-header">
           <HeaderMenu value={collapsed} setvalue={setCollapsed} />
         </Header>
-        <Content className="site-layout-content">
+        <Content className="entry-content">
           <Routes>
             <Route path="/" element={<Homepage />} />
-            <Route path="/exchnages" element={<Exchnages />} />
+            <Route path="/Exchanges" element={<Exchanges />} />
             <Route path="/criptocurrencies" element={<Criptocurrencies />} />
             <Route path="/cripto/:coinId" element={<CriptoDetails />} />
             <Route path="/news" element={<News />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Content>
+        <Footer className="footer">
+          <FooterMenu />
+        </Footer>
       </Layout>
     </Layout>
   );

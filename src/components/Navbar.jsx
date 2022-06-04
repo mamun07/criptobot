@@ -1,11 +1,22 @@
 import React from 'react';
-import { Menu } from 'antd';
-import { HomeOutlined } from '@ant-design/icons';
+import { Menu, Typography } from 'antd';
+import {
+  HomeOutlined,
+  LineChartOutlined,
+  DollarOutlined,
+  ExpandOutlined,
+  CopyrightOutlined,
+} from '@ant-design/icons';
 import { NavLink } from 'react-router-dom';
+
 const Navbar = () => {
   return (
-    <div>
-      <div className="logo">Cripto Bot</div>
+    <>
+      <div className="logo">
+        <Typography.Title level={2}>
+          <CopyrightOutlined />
+        </Typography.Title>
+      </div>
       <Menu
         theme="dark"
         mode="inline"
@@ -18,22 +29,22 @@ const Navbar = () => {
           },
           {
             key: '2',
-            icon: <HomeOutlined />,
-            label: <NavLink to="/exchnages">Exchnages</NavLink>,
+            icon: <LineChartOutlined />,
+            label: <NavLink to="/Exchanges">Exchanges</NavLink>,
           },
           {
             key: '3',
-            icon: <HomeOutlined />,
+            icon: <DollarOutlined />,
             label: <NavLink to="/criptocurrencies">Cripto Currencies</NavLink>,
           },
           {
             key: '4',
-            icon: <HomeOutlined />,
+            icon: <ExpandOutlined />,
             label: <NavLink to="/news">News</NavLink>,
           },
         ]}
       />
-    </div>
+    </>
   );
 };
 

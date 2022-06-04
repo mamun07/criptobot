@@ -35,14 +35,26 @@ a:hover {
 }
 
 .logo {
-  height: 32px;
-  margin: 16px;
-  color: var(--bgPrimary);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo h2 {
+  color: var(--orange);
+  margin: 0;
 }
 
-.site-layout .site-layout-content {
+.main-content .entry-content {
   background: var(--bgPrimary);
+  padding: 30px;
 }
-.site-layout .site-layout-header {
+.main-content .entry-header {
   padding: 0;
+}
+.footer-main {
+  text-align: right;
+}
+.footer-main > div {
+  margin: 0;
 }
