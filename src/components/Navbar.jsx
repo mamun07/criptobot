@@ -13,9 +13,11 @@ const Navbar = () => {
   return (
     <>
       <div className="logo">
-        <Typography.Title level={2}>
-          <CopyrightOutlined />
-        </Typography.Title>
+        <NavLink to="/">
+          <Typography.Title level={2}>
+            <CopyrightOutlined />
+          </Typography.Title>
+        </NavLink>
       </div>
       <Menu
         theme="dark"

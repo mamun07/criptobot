@@ -1,17 +1,20 @@
 import React from 'react';
-import millify from 'millify';
-import { Card, Col, Row, Typography } from 'antd';
-import { useGetCryptosQuery } from '../services/cryptoApi';
 import { NavLink } from 'react-router-dom';
+import millify from 'millify';
+import { Card, Col, Row, Statistic, Typography } from 'antd';
+import { ArrowUpOutlined } from '@ant-design/icons';
+
+// Data from API
+import { useGetCryptosQuery } from '../services/cryptoApi';
 
 import { Criptocurrencies, News } from './index';
+import { Loding } from '../components';
 
 const Homepage = () => {
-  const { data, isFetching } = useGetCryptosQuery();
+  const { data, isFetching } = useGetCryptosQuery(10);
   const globalStats = data?.data?.stats;
 
-  console.log(data);
-  if (isFetching) return 'Loding...';
+  if (isFetching) return <Loding />;
 
   return (
     <>
@@ -20,43 +23,65 @@ const Homepage = () => {
           <Typography.Title> Welcome to Crypto Bot</Typography.Title>
         </Col>
         <Col xs={24} md={5}>
-          <Card title="Total Cryptocurrencies">
-            <Typography.Title>{globalStats.total}</Typography.Title>
+          <Card>
+            <Statistic
+              title="Total Cryptocurrencies"
+              value={globalStats.total}
+              precision={0}
+              valueStyle={{ color: '#336d00' }}
+              prefix={<ArrowUpOutlined />}
+            />
           </Card>
         </Col>
         <Col xs={24} md={5}>
-          <Card title="Total Exchanges">
-            <Typography.Title>
-              {millify(globalStats.totalExchanges)}
-            </Typography.Title>
+          <Card>
+            <Statistic
+              title="Total Exchanges"
+              value={millify(globalStats.totalExchanges)}
+              precision={0}
+              valueStyle={{ color: '#3f8600' }}
+              prefix={<ArrowUpOutlined />}
+            />
           </Card>
         </Col>
         <Col xs={24} md={5}>
-          <Card title="Total MarketCap">
-            <Typography.Title>
-              {millify(globalStats.totalMarketCap)}
-            </Typography.Title>
+          <Card>
+            <Statistic
+              title="Total MarketCap"
+              value={millify(globalStats.totalMarketCap)}
+              precision={0}
+              valueStyle={{ color: '#3f8600' }}
+              prefix={<ArrowUpOutlined />}
+            />
           </Card>
         </Col>
         <Col xs={24} md={5}>
-          <Card title="Total Markets">
-            <Typography.Title>
-              {millify(globalStats.totalMarkets)}
-            </Typography.Title>
+          <Card>
+            <Statistic
+              title="Total Markets"
+              value={millify(globalStats.totalMarkets)}
+              precision={0}
+              valueStyle={{ color: '#3f8600' }}
+              prefix={<ArrowUpOutlined />}
+            />
           </Card>
         </Col>
         <Col xs={24} md={4}>
-          <Card title="Total 24h Volume">
-            <Typography.Title>
-              {millify(globalStats.total24hVolume)}
-            </Typography.Title>
+          <Card>
+            <Statistic
+              title="Total 24h Volume"
+              value={millify(globalStats.total24hVolume)}
+              precision={0}
+              valueStyle={{ color: '#3f8600' }}
+              prefix={<ArrowUpOutlined />}
+            />
           </Card>
         </Col>
 
         <Col span={24}>
           <Card
             title="Top 10 Cryptocurrencies"
-            extra={<NavLink to="/">Show More</NavLink>}
+            extra={<NavLink to="/criptocurrencies">Show More</NavLink>}
           >
             <Criptocurrencies smplified />
           </Card>
@@ -65,7 +90,7 @@ const Homepage = () => {
         <Col span={24}>
           <Card
             title="Latest Cryptocurrencies News"
-            extra={<NavLink to="/">Show More</NavLink>}
+            extra={<NavLink to="/news">Show More</NavLink>}
           >
             <News smplified />
           </Card>

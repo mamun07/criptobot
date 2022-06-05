@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Layout } from 'antd';
+import { BackTop, Layout } from 'antd';
 import { Route, Routes } from 'react-router-dom';
 
 import { Navbar } from './components';
@@ -12,6 +12,7 @@ import {
   News,
   NotFound,
 } from './pages';
+import { ArrowUpOutlined } from '@ant-design/icons';
 const { Sider, Content, Header, Footer } = Layout;
 
 const App = () => {
@@ -41,6 +42,11 @@ const App = () => {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Content>
+        <BackTop>
+          <div className="backtotop">
+            <ArrowUpOutlined />
+          </div>
+        </BackTop>
         <Footer className="footer">
           <FooterMenu />
         </Footer>
