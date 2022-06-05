@@ -11,19 +11,19 @@ import { Criptocurrencies, News } from './index';
 import { Loding } from '../components';
 
 const Homepage = () => {
-  const { data, isFetching } = useGetCryptosQuery(10);
+  const { data, isFetching } = useGetCryptosQuery(8);
   const globalStats = data?.data?.stats;
 
   if (isFetching) return <Loding />;
 
   return (
     <>
-      <Row gutter={[32, 32]}>
+      <Row gutter={[16, 16]}>
         <Col span={24}>
           <Typography.Title> Welcome to Crypto Bot</Typography.Title>
         </Col>
         <Col xs={24} md={5}>
-          <Card>
+          <Card hoverable>
             <Statistic
               title="Total Cryptocurrencies"
               value={globalStats.total}
@@ -34,7 +34,7 @@ const Homepage = () => {
           </Card>
         </Col>
         <Col xs={24} md={5}>
-          <Card>
+          <Card hoverable>
             <Statistic
               title="Total Exchanges"
               value={millify(globalStats.totalExchanges)}
@@ -45,7 +45,7 @@ const Homepage = () => {
           </Card>
         </Col>
         <Col xs={24} md={5}>
-          <Card>
+          <Card hoverable>
             <Statistic
               title="Total MarketCap"
               value={millify(globalStats.totalMarketCap)}
@@ -56,7 +56,7 @@ const Homepage = () => {
           </Card>
         </Col>
         <Col xs={24} md={5}>
-          <Card>
+          <Card hoverable>
             <Statistic
               title="Total Markets"
               value={millify(globalStats.totalMarkets)}
@@ -67,7 +67,7 @@ const Homepage = () => {
           </Card>
         </Col>
         <Col xs={24} md={4}>
-          <Card>
+          <Card hoverable>
             <Statistic
               title="Total 24h Volume"
               value={millify(globalStats.total24hVolume)}

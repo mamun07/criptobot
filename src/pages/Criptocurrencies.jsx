@@ -9,7 +9,7 @@ import { useGetCryptosQuery } from '../services/cryptoApi';
 import { Loding } from '../components';
 
 const Criptocurrencies = ({ smplified }) => {
-  const count = smplified ? 10 : 100;
+  const count = smplified ? 8 : 100;
   const { data: cryptoList, isFetching } = useGetCryptosQuery(count);
   const [cryptos, setCryptos] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -27,7 +27,7 @@ const Criptocurrencies = ({ smplified }) => {
     <>
       {!smplified && (
         <Row gutter={[16, 16]} justify="center">
-          <Col span={10}>
+          <Col xs={24} lg={12}>
             <div className="cryptocurrency-search">
               <input
                 type="text"
