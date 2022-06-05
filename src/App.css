@@ -73,6 +73,22 @@ a:hover {
   border-radius: 50px;
 }
 
+.news-list-card > div > li,
+.news-list-card > div {
+  padding: 0;
+}
+.news-list-card .entry-thumb img {
+  width: 200px;
+}
+.news-list-card > div .card-content {
+  padding: 15px 25px;
+}
+.card-content-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .footer-main {
   text-align: right;
 }
