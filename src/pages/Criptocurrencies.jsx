@@ -8,6 +8,8 @@ import { Avatar, Card, Col, Row, Typography } from 'antd';
 import { useGetCryptosQuery } from '../services/cryptoApi';
 import { Loding } from '../components';
 
+const { Title, Paragraph } = Typography;
+
 const Criptocurrencies = ({ smplified }) => {
   const count = smplified ? 8 : 100;
   const { data: cryptoList, isFetching } = useGetCryptosQuery(count);
@@ -40,8 +42,8 @@ const Criptocurrencies = ({ smplified }) => {
       )}
       <Row gutter={[16, 16]}>
         {cryptos?.map((currency) => (
-          <Col key={currency.name} xs={24} md={6}>
-            <NavLink to={`/crypto/${currency.id}`}>
+          <Col key={currency.uuid} xs={24} md={6}>
+            <NavLink to={`/cripto/${currency.uuid}`}>
               <Card
                 title={currency.name}
                 extra={
@@ -54,16 +56,10 @@ const Criptocurrencies = ({ smplified }) => {
                 }
                 hoverable
               >
-                <Typography.Title>{millify(currency.price)}</Typography.Title>
-                <Typography.Paragraph>
-                  Rank: {currency.rank}
-                </Typography.Paragraph>
-                <Typography.Paragraph>
-                  Change: {millify(currency.change)}
-                </Typography.Paragraph>
-                <Typography.Paragraph>
-                  Market Cap: {millify(currency.marketCap)}
-                </Typography.Paragraph>
+                <Title>{millify(currency.price)}</Title>
+                <Paragraph>Rank: {currency.rank}</Paragraph>
+                <Paragraph>Change: {millify(currency.change)}</Paragraph>
+                <Paragraph>Market Cap: {millify(currency.marketCap)}</Paragraph>
               </Card>
             </NavLink>
           </Col>
