@@ -11,7 +11,7 @@ import { Loding } from '../components';
 const { Title, Paragraph } = Typography;
 
 const Criptocurrencies = ({ smplified }) => {
-  const count = smplified ? 8 : 100;
+  const count = smplified ? 12 : 100;
   const { data: cryptoList, isFetching } = useGetCryptosQuery(count);
   const [cryptos, setCryptos] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -42,9 +42,10 @@ const Criptocurrencies = ({ smplified }) => {
       )}
       <Row gutter={[16, 16]}>
         {cryptos?.map((currency) => (
-          <Col key={currency.uuid} xs={24} md={6}>
+          <Col key={currency.uuid} xs={24} md={4}>
             <NavLink to={`/cripto/${currency.uuid}`}>
               <Card
+                size="small"
                 title={currency.name}
                 extra={
                   <Avatar
@@ -55,6 +56,7 @@ const Criptocurrencies = ({ smplified }) => {
                   />
                 }
                 hoverable
+                style={{ background: '#fafafa' }}
               >
                 <Title>{millify(currency.price)}</Title>
                 <Paragraph>Rank: {currency.rank}</Paragraph>

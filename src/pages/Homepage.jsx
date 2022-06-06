@@ -20,7 +20,7 @@ const Homepage = () => {
     <>
       <Row gutter={[16, 16]}>
         <Col span={24}>
-          <Typography.Title> Welcome to Crypto Bot</Typography.Title>
+          <Typography.Title level={2}> Welcome to Cryptobot !</Typography.Title>
         </Col>
         <Col xs={24} md={5}>
           <Card hoverable>
@@ -80,7 +80,7 @@ const Homepage = () => {
 
         <Col span={24}>
           <Card
-            title="Top 10 Cryptocurrencies"
+            title="TOP 12 CRYPTOCURRENCIES"
             extra={<NavLink to="/criptocurrencies">Show More</NavLink>}
           >
             <Criptocurrencies smplified />
@@ -89,7 +89,7 @@ const Homepage = () => {
 
         <Col span={24}>
           <Card
-            title="Latest Cryptocurrencies News"
+            title="LATEST CRYPTOCURRENCIES NEWS"
             extra={<NavLink to="/news">Show More</NavLink>}
           >
             <News smplified />

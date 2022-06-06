@@ -88,7 +88,14 @@ a:hover {
   align-items: center;
   justify-content: space-between;
 }
-
+.header-top-bar-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.new-account-btn {
+  margin-right: 30px;
+}
 .footer-main {
   text-align: right;
 }
