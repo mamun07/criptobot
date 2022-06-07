@@ -37,7 +37,7 @@ const Navbar = () => {
           {
             key: '3',
             icon: <DollarOutlined />,
-            label: <NavLink to="/criptocurrencies">Cripto Currencies</NavLink>,
+            label: <NavLink to="/cryptocurrencies">Crypto Currencies</NavLink>,
           },
           {
             key: '4',

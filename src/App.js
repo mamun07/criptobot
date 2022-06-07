@@ -37,7 +37,7 @@ const App = () => {
             <Route path="/" element={<Homepage />} />
             <Route path="/Exchanges" element={<Exchanges />} />
             <Route path="/Cryptocurrencies" element={<Cryptocurrencies />} />
-            <Route path="/cripto/:coinId" element={<CryptoDetails />} />
+            <Route path="/crypto/:coinId" element={<CryptoDetails />} />
             <Route path="/news" element={<News />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
 import millify from 'millify';
 
 import { Avatar, Card, Col, Row, Typography } from 'antd';
@@ -43,7 +42,12 @@ const Cryptocurrencies = ({ smplified }) => {
       <Row gutter={[16, 16]}>
         {cryptos?.map((currency) => (
           <Col key={currency.uuid} xs={24} md={4}>
-            <NavLink to={`/cripto/${currency.uuid}`}>
+            <a
+              href={currency.coinrankingUrl}
+              alt={currency.name}
+              target="_blank"
+              rel="noreferrer"
+            >
               <Card
                 size="small"
                 title={currency.name}
@@ -63,7 +67,7 @@ const Cryptocurrencies = ({ smplified }) => {
                 <Paragraph>Change: {millify(currency.change)}</Paragraph>
                 <Paragraph>Market Cap: {millify(currency.marketCap)}</Paragraph>
               </Card>
-            </NavLink>
+            </a>
           </Col>
         ))}
       </Row>

@@ -1,17 +1,18 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
-import { Row, Col } from 'antd';
+import { Row, Col, Typography } from 'antd';
 
-const CriptoDetails = () => {
-  const { coinId } = useParams();
+const { Text } = Typography;
+
+const CryptoDetails = () => {
+  // if (isFetching) return <Loding />;
 
   return (
     <Row>
       <Col xs={24}>
-        <div>UUID = {coinId} </div>
+        <Text>Crypto Details pages </Text>
       </Col>
     </Row>
   );
 };
 
-export default CriptoDetails;
+export default CryptoDetails;
