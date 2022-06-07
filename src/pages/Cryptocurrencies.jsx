@@ -10,7 +10,7 @@ import { Loding } from '../components';
 
 const { Title, Paragraph } = Typography;
 
-const Criptocurrencies = ({ smplified }) => {
+const Cryptocurrencies = ({ smplified }) => {
   const count = smplified ? 12 : 100;
   const { data: cryptoList, isFetching } = useGetCryptosQuery(count);
   const [cryptos, setCryptos] = useState([]);
@@ -71,4 +71,4 @@ const Criptocurrencies = ({ smplified }) => {
   );
 };
 
-export default Criptocurrencies;
+export default Cryptocurrencies;

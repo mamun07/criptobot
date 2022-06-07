@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Row, Col } from 'antd';
 
 const CriptoDetails = () => {
   const { coinId } = useParams();
-  const [timePreiod, setTimePreiod] = useState('7d');
 
   return (
     <Row>

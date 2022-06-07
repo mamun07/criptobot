@@ -7,7 +7,7 @@ import { ArrowUpOutlined } from '@ant-design/icons';
 // Data from API
 import { useGetCryptosQuery } from '../services/cryptoApi';
 
-import { Criptocurrencies, News } from './index';
+import { Cryptocurrencies, News } from './index';
 import { Loding } from '../components';
 
 const Homepage = () => {
@@ -81,9 +81,9 @@ const Homepage = () => {
         <Col span={24}>
           <Card
             title="TOP 12 CRYPTOCURRENCIES"
-            extra={<NavLink to="/criptocurrencies">Show More</NavLink>}
+            extra={<NavLink to="/Cryptocurrencies">Show More</NavLink>}
           >
-            <Criptocurrencies smplified />
+            <Cryptocurrencies smplified />
           </Card>
         </Col>
 

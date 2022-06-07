@@ -7,8 +7,8 @@ import { HeaderMenu, FooterMenu } from './container';
 import {
   Homepage,
   Exchanges,
-  Criptocurrencies,
-  CriptoDetails,
+  Cryptocurrencies,
+  CryptoDetails,
   News,
   NotFound,
 } from './pages';
@@ -36,8 +36,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="/Exchanges" element={<Exchanges />} />
-            <Route path="/criptocurrencies" element={<Criptocurrencies />} />
-            <Route path="/cripto/:coinId" element={<CriptoDetails />} />
+            <Route path="/Cryptocurrencies" element={<Cryptocurrencies />} />
+            <Route path="/cripto/:coinId" element={<CryptoDetails />} />
             <Route path="/news" element={<News />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
